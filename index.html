@@ -1,115 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="moment.js"></script>
     <script src="jquery-3.6.0.min.js"></script>
     <link href='http://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900italic,900' rel='stylesheet' type='text/css'>
-
     <title>Project RACS Release Countdown</title>
-</head>
-<body>
-    <div class ="center">
-        <p>PRACS is said to be released on a Thursday, but we do not know which Thursday. The closest Thursday is: </p>
-        <h1 id="time"></h1>
-        <h2 id="timeB"></h1>
-
-        <button class="button-6" onclick="insertPW()">Mod got released!</button>
-
-
+  </head>
+  <body>
+    <div class="center">
+      <p>PRACS is said to be released on a Thursday, but we do not know which Thursday. The closest Thursday is: </p>
+      <h1 id="time"></h1>
+      <h2 id="timeB">
+        </h1>
     </div>
     <script>
-
-        var pw;
-        var isReleased = false;
-        var thursday = moment("29/09/2022", "DD MM YYYY");
-        var thursdayCalc = moment("29/09/2022", "DD MM YYYY");
-        var CurrentDate = moment()
-        if (isReleased== false && moment(CurrentDate).isSameOrAfter(thursdayCalc) ){
-            thursday=moment().add(7, 'days');
-        }
-        document.getElementById("time").innerHTML = moment(thursday).format("dddd, MMMM Do YYYY");
-        var pw = "S0uNd165"
-        function insertPW() {
-            let text;
-            let password = prompt("Please enter the Release password:");
-            
-            if (password == null || password == "") {
-                text = "User cancelled the prompt.";
-            } else if (password != pw){
-                prompt("Wrong PW, try again:");
-            }else {
-            isReleased=true;
-            }
-        
-}   
+      var pw;
+      var isReleased = false;
+      var thursday = moment("29/09/2022", "DD MM YYYY");
+      var thursdayCalc = moment("29/09/2022", "DD MM YYYY");
+      var CurrentDate = moment()
+      if (isReleased == false && moment(CurrentDate).isSameOrAfter(thursdayCalc)) {
+        thursday = moment().add(7, 'days');
+      }
+      document.getElementById("time").innerHTML = moment(thursday).format("dddd, MMMM Do YYYY");
     </script>
-</body>
-<style>
-    body{
-        background: rgb(2,0,36);
-background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%);
-font-family: 'Roboto';
-color: white;
-
+  </body>
+  <style>
+    body {
+      background: rgb(2, 0, 36);
+      background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(9, 9, 121, 1) 35%, rgba(0, 212, 255, 1) 100%);
+      font-family: 'Roboto';
+      color: white;
     }
-    .center{
-        position: fixed; /* or absolute */
-        top: 50%;
-        left: 50%;
-  /* bring your own prefixes */
-  transform: translate(-50%, -50%);
-  text-align: center;
 
-  
+    .center {
+      position: fixed;
+      /* or absolute */
+      top: 50%;
+      left: 50%;
+      /* bring your own prefixes */
+      transform: translate(-50%, -50%);
+      text-align: center;
     }
+
     .button-6 {
-  align-items: center;
-  background-color: #FFFFFF;
-  border: 1px solid rgba(0, 0, 0, 0.1);
-  border-radius: .25rem;
-  box-shadow: rgba(0, 0, 0, 0.02) 0 1px 3px 0;
-  box-sizing: border-box;
-  color: rgba(0, 0, 0, 0.85);
-  cursor: pointer;
-  display: inline-flex;
-  font-family: system-ui,-apple-system,system-ui,"Helvetica Neue",Helvetica,Arial,sans-serif;
-  font-size: 16px;
-  font-weight: 600;
-  justify-content: center;
-  line-height: 1.25;
-  margin: 0;
-  min-height: 3rem;
-  padding: calc(.875rem - 1px) calc(1.5rem - 1px);
-  position: relative;
-  text-decoration: none;
-  transition: all 250ms;
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
-  vertical-align: baseline;
-  width: auto;
-}
+      align-items: center;
+      background-color: #FFFFFF;
+      border: 1px solid rgba(0, 0, 0, 0.1);
+      border-radius: .25rem;
+      box-shadow: rgba(0, 0, 0, 0.02) 0 1px 3px 0;
+      box-sizing: border-box;
+      color: rgba(0, 0, 0, 0.85);
+      cursor: pointer;
+      display: inline-flex;
+      font-family: system-ui, -apple-system, system-ui, "Helvetica Neue", Helvetica, Arial, sans-serif;
+      font-size: 16px;
+      font-weight: 600;
+      justify-content: center;
+      line-height: 1.25;
+      margin: 0;
+      min-height: 3rem;
+      padding: calc(.875rem - 1px) calc(1.5rem - 1px);
+      position: relative;
+      text-decoration: none;
+      transition: all 250ms;
+      user-select: none;
+      -webkit-user-select: none;
+      touch-action: manipulation;
+      vertical-align: baseline;
+      width: auto;
+    }
 
-.button-6:hover,
-.button-6:focus {
-  border-color: rgba(0, 0, 0, 0.15);
-  box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
-  color: rgba(0, 0, 0, 0.65);
-}
+    .button-6:hover,
+    .button-6:focus {
+      border-color: rgba(0, 0, 0, 0.15);
+      box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
+      color: rgba(0, 0, 0, 0.65);
+    }
 
-.button-6:hover {
-  transform: translateY(-1px);
-}
+    .button-6:hover {
+      transform: translateY(-1px);
+    }
 
-.button-6:active {
-  background-color: #F0F0F1;
-  border-color: rgba(0, 0, 0, 0.15);
-  box-shadow: rgba(0, 0, 0, 0.06) 0 2px 4px;
-  color: rgba(0, 0, 0, 0.65);
-  transform: translateY(0);
-}
-</style>
+    .button-6:active {
+      background-color: #F0F0F1;
+      border-color: rgba(0, 0, 0, 0.15);
+      box-shadow: rgba(0, 0, 0, 0.06) 0 2px 4px;
+      color: rgba(0, 0, 0, 0.65);
+      transform: translateY(0);
+    }
+  </style>
 </html>
